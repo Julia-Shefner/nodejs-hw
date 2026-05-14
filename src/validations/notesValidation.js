@@ -17,7 +17,7 @@ const objectIdValidator = (value, helpers) => {
 
 export const noteIdSchema = {
   [Segments.PARAMS]: Joi.object({
-    noteId: Joi.string().custom(objectIdValidator).trim().equired(),
+    noteId: Joi.string().custom(objectIdValidator).trim().required(),
   }),
 };
 
