@@ -17,13 +17,13 @@ const objectIdValidator = (value, helpers) => {
 
 export const noteIdSchema = {
   [Segments.PARAMS]: Joi.object({
-    noteId: Joi.string().custom(objectIdValidator).required(),
+    noteId: Joi.string().custom(objectIdValidator).trim().equired(),
   }),
 };
 
 export const createNoteSchema = {
   [Segments.BODY]: Joi.object({
-    title: Joi.string().min(1),
+    title: Joi.string().min(1).required(),
     content: Joi.string().allow(''),
     tag: Joi.string().valid(...TAGS),
   }),
